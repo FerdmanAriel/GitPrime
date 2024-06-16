@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Tasks]
+    AUTHORIZATION [dbo];
+

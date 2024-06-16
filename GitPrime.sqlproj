@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>GitPrime</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{62895ed0-f0e9-41f5-a08e-3190e642cc3f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>GitPrime</RootNamespace>
+    <AssemblyName>GitPrime</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Settings\" />
+    <Folder Include="Settings\Tables\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="Tasks\" />
+    <Folder Include="Tasks\Stored Procedures\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Stored Procedures\SP_SHRINK.sql" />
+    <Build Include="dbo\Stored Procedures\SP_RESTORE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_REINDEX.sql" />
+    <Build Include="dbo\Stored Procedures\SP_MAINTENANCE_STATISTICS.sql" />
+    <Build Include="dbo\Stored Procedures\SP_INTEGRITY.sql" />
+    <Build Include="dbo\Stored Procedures\SP_DRP_SOURCE_SERVER.sql" />
+    <Build Include="dbo\Stored Procedures\SP_DRP_DESTINATION_SERVER.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CREATE_JOB.sql" />
+    <Build Include="dbo\Stored Procedures\SP_BACKUP_RESTORE_LIST.sql" />
+    <Build Include="dbo\Stored Procedures\SP_BACKUP_REMOVED_EXPIRED.sql" />
+    <Build Include="dbo\Stored Procedures\SP_BACKUP_REMOVE_UNKNOWN_FILES.sql" />
+    <Build Include="dbo\Stored Procedures\SP_BACKUP_POT_AVAILABLE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_BACKUP_NATIVE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_BACKUP_GET_LSN_FROM_FILE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_BACKUP_GET_ESTIMATED_BACKUP_SIZE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_BACKUP_ADDITIONAL_FILES.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ATTACH_DB.sql" />
+    <Build Include="dbo\Stored Procedures\GET_DUPLICATED_INDEXES.sql" />
+    <Build Include="dbo\Tables\XEventSessions.sql" />
+    <Build Include="dbo\Tables\ET_VERSION.sql" />
+    <Build Include="dbo\Tables\DR_Log_SLN.sql" />
+    <Build Include="dbo\Tables\CommandLog.sql" />
+    <Build Include="dbo\Tables\CLOUD_UPLOADS.sql" />
+    <Build Include="Settings\Tables\SERVER_SETTINGS.sql" />
+    <Build Include="dbo\Functions\GET_SERVER_SETTINGS.sql" />
+    <Build Include="dbo\Functions\FUNC_SELECT_BLOCK_CHILD.sql" />
+    <Build Include="dbo\Functions\FUNC_REMOVE_NULL_CHARS.sql" />
+    <Build Include="dbo\Functions\FUNC_MS_TO_TEXT.sql" />
+    <Build Include="dbo\Functions\FUNC_IS_FILE_EXISTS.sql" />
+    <Build Include="dbo\Functions\FUNC_BIN_TO_HEX.sql" />
+    <Build Include="dbo\Functions\fn_FileExists.sql" />
+    <Build Include="dbo\Functions\FUNC_SPLIT.sql" />
+    <Build Include="Tasks\Stored Procedures\GET_DATABASE_LIST.sql" />
+    <Build Include="Tasks\Stored Procedures\GET_JOB_STEP_HISTORY.sql" />
+    <Build Include="Tasks\Stored Procedures\GET_SCHEMA_TABLES.sql" />
+    <Build Include="Tasks\Stored Procedures\GET_SCHEMA_INDEXES.sql" />
+    <Build Include="Tasks\Stored Procedures\GET_DBCOMPARE_DATA.sql" />
+    <Build Include="Tasks\Stored Procedures\GET_DATABASE_BACKUPS_SIMPLE.sql" />
+    <Build Include="Security\Tasks.sql" />
+    <Build Include="Security\Settings.sql" />
+    <Build Include="Security\Reporting.sql" />
+  </ItemGroup>
+</Project>
