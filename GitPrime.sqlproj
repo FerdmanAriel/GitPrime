@@ -108,5 +108,7 @@
     <Build Include="Security\Tasks.sql" />
     <Build Include="Security\Settings.sql" />
     <Build Include="Security\Reporting.sql" />
+    <Build Include="dbo\Tables\push_table.sql" />
+    <Build Include="dbo\Stored Procedures\sp_Ariel.sql" />
   </ItemGroup>
 </Project>
