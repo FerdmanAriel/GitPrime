@@ -1,10 +1,11 @@
-﻿-- =============================================
+﻿
+-- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE sp_Ariel 
+CREATE   PROCEDURE [dbo].[sp_Ariel] 
 AS
 BEGIN
-	select 'ariel' as 'name'
+	select 'Ariel' as 'First Name','Ferdman' as 'Last Name'
 END
